@@ -92,7 +92,7 @@ function displayRandomPhotos() {
   }
 
 
-  selectedPics = allPicsCopy.slice(0, 90);
+  selectedPics = allPicsCopy.slice(0, 24);
 
   for (var i = 0; i < selectedPics.length; i++) {
 
