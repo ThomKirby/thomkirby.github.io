@@ -28,19 +28,19 @@ var allPics = [
   "Albert Kleynhans.jpg", "Albert Matthee.jpg", "Alexander Warrington.jpg", "Andrikus Huisamen.jpg",
   "Ayabonga Hlumkeza.jpg", "Benediction Bahumile.jpg", "Benjamin Shirley.jpg", "Bomi Khawula.jpg",
   "Bradley Tristan du Toit.jpg", "Bulelani Mazibuko.jpg", "Byron Frans.jpg", "Caleb Marais.jpg",
-  "Cameron Burchell.jpg", "Cameron van Coller.jpg", "Charl De Beer.jpg", "Christopher Cocks.jpg", "Corné Prinsloo.jpg",
+  "Cameron Burchell.jpg", "Cameron van Coller.jpg", "Charl de Beer.jpg", "Christopher Cocks.jpg", "Corné Prinsloo.jpg",
   "Daniel Kok.jpg", "Deomarco Rhode.jpg", "Dirk Bester.jpg", "Ebube Onyeme.jpg",
   "Eduard Albertyn.jpg", "Emile Hendricks.jpg", "Ewan Bouwer.jpg", "FJ Bezuidenhout.jpg",
   "Fanny Maahlo.jpg", "Finlay Davison.jpg", "Francois van Niekerk.jpg", "Gabriel Brocker-Corns.jpg", "Hamilton Slater.jpg",
   "Hendrik Pelser.jpg", "Herman Augustyn.jpg", "Jack Noussis.jpg", "Jacques Adriaan van Zyl.jpg",
   "James Erasmus.jpg", "James Robert Wiggill.jpg", "JD le Roux", "Jean Blignaut.jpg", "JW Visagie.jpg",
-  "Jaco Steyn.jpg", "Johannes Christiaan Portwig.jpg", "John-Matt Le Roux.jpg", "Josh Beckley.jpg",
+  "Jaco Steyn.jpg", "Johannes Christiaan Portwig.jpg", "John-Matt le Roux.jpg", "Josh Beckley.jpg",
   "Joubert du Toit.jpg", "Khanya Hlabahlaba.jpg", "Kristian Matthew Mongie.jpg", "Leigh-Hagen Cornelissen.jpg",
   "Louis van Heerden.jpg", "Lucas Marthinus Kruger.jpg", "Lucian Booysen.jpg",
   "Luke Blaire van Wyngaard.jpg", "Luke Swartz.jpg", "Luveni Mahelu.jpg", "Marchand Nel.jpg",
   "Matthew Duk.jpg", "Matthew Halbert.jpg", "Matthew James Vos.jpg", "Matthew Peter Van Rooyen.jpg", "Mduduzi Sihlangu.jpg",
   "Michael Neuper.jpg", "Michael James Solecki.jpg", "Michael Mulcahy.jpg", "Michael Newton.jpg",
-  "Michael Shepstone.jpg", "Ngoni Zvenyika.jpg", "Neelsie Van Dyk.jpg",
+  "Michael Shepstone.jpg", "Ngoni Zvenyika.jpg", "Neelsie van Dyk.jpg",
   "Ntsika Vellem.jpg", "Onako Mqeni.jpg", "Pieter Roux.jpg", "Prim Du Preez.jpg",
   "Rahul Daya.jpg", "Righardt Pretorius.jpg", "Ross Jacobs.jpg", "Ryan Bennett.jpg",
   "Sauvan Sewsunker.jpg", "Tshepang Semenya.jpg", "Tokelo Motloli.jpg",
@@ -51,6 +51,8 @@ var allPics = [
 
 var selectedPics = [];
 
+var opponentCharacterIndex = Math.floor(rng() * selectedPics.length);
+var opponentCharacter = selectedPics[opponentCharacterIndex];
 
 function myCharacter() {
 
@@ -114,8 +116,7 @@ function displayRandomPhotos() {
 }
 
 
-var opponentCharacterIndex = Math.floor(rng() * selectedPics.length);
-var opponentCharacter = selectedPics[opponentCharacterIndex];
+
 
 
 displayRandomPhotos();
