@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.loader {
+  background-color: black;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pre-loader {
+  display: flex;
+}
+
+.pre-loader li {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #484848;
+  letter-spacing: 10px;
+  font-size: 100px;
+  list-style: none;
+  animation: pre-load 4s ease-in-out infinite;
+}
+
+@keyframes pre-load {
+
+  0% {
+    color: #484848;
+    text-shadow: none;
+  }
+
+  20% {
+    color: #484848;
+    text-shadow: none;
+  }
+
+  40% {
+    color: #506c84;
+    text-shadow: 0 0 7px #506c84, 0 0 50px #506c84;
+  }
+
+  60% {
+    color: #484848;
+    text-shadow: none;
+  }
+
+  80% {
+    color: #484848;
+    text-shadow: none;
+  }
+
+  100% {
+    color: #484848;
+    text-shadow: none;
+  }
+
+}
+
+ul li:nth-child(1) {
+  animation-delay: 0s;
+}
+
+ul.pre-loader li:nth-child(2) {
+  animation-delay: .2s;
+}
+
+ul.pre-loader li:nth-child(3) {
+  animation-delay: .4s;
+}
+
+ul.pre-loader li:nth-child(4) {
+  animation-delay: .6s;
+}
+
+ul.pre-loader li:nth-child(5) {
+  animation-delay: .8s;
+}
+
+ul.pre-loader li:nth-child(6) {
+  animation-delay: 1s;
+}
+
+ul.pre-loader li:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+ul.pre-loader li:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+ul.pre-loader li:nth-child(9) {
+  animation-delay: 1.6s;
+}
+
+ul.pre-loader li:nth-child(10) {
+  animation-delay: 1.8s;
+}
+
+
+body {
+background-color: rgb(26, 26, 26);
+  color: #506c84;
+}
+
+#header{
+  text-align: center;
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  object-fit: cover;
+  display: block;
+}
+
+.main-content {
+  display: flex;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.sidebar {
+  width: 260px;
+  padding-right: 10px;
+}
+
+.container {
+  position: sticky;
+  top: 0;
+}
+
+#me img {
+  border: 5px solid #506c84;
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+
+#name,
+.tracker {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #506c84;
+  letter-spacing: 10px;
+  text-shadow: 5px 5px 10px #506271;
+}
+
+#name {
+  font-size: 36px;
+  padding-top: 10px;
+}
+
+.tracker {
+  font-size: 25px;
+  padding-top: 40px;
+  margin-left: 10px;
+}
+
+#score {
+  padding-bottom: 80px;
+  font-size: 36px;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 10px;
+  color: white;
+  background-color: #506c84;
+  margin-top: 10px;
+  letter-spacing: 5px;
+  transition: .5s;
+  border: none;
+  box-shadow: 1px 1px 10px #506c84;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  transform: scale(1.15);
+}
+
+#gameboard {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.card {
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #506c84;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card.flipped img {
+  height: 35%;
+  width: 35%;
+}
+
+/* Media Queries */
+@media (min-width: 1300px) {
+  .main-content {
+    max-width: 1300px;
+    margin: auto;
+  }
+}
+
+
+#roomCode {
+  margin-top: 20px;
+  text-align: center;
+  color: #506c84;
+}
+
+#roomCode h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+#seedDisplay {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#enterRoom {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#enterRoom h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+#roomCodeInput {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+#refreshRoom {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+footer{
+  padding-bottom: 20px;
+}
+
+.card-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-name {
+  font-size: 14px;
+  color: #506c84;
+  margin-top: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
