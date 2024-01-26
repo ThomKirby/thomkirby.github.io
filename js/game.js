@@ -51,6 +51,8 @@ var allPics = [
 
 var selectedPics = [];
 
+var opponentCharacterIndex = Math.floor(rng() * selectedPics.length);
+var opponentCharacter = selectedPics[opponentCharacterIndex];
 
 function myCharacter() {
 
@@ -114,8 +116,7 @@ function displayRandomPhotos() {
 }
 
 
-var opponentCharacterIndex = Math.floor(rng() * selectedPics.length);
-var opponentCharacter = selectedPics[opponentCharacterIndex];
+
 
 
 displayRandomPhotos();
