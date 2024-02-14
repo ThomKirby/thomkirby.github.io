@@ -147,7 +147,7 @@ img {
   font-family: Arial, Helvetica, sans-serif;
   color: #506c84;
   letter-spacing: 10px;
-  text-shadow: 5px 5px 10px #506271;
+  text-shadow: 0.5px 0.5px 5px #506271;
 }
 
 #name {
@@ -177,7 +177,7 @@ button {
   letter-spacing: 5px;
   transition: .5s;
   border: none;
-  box-shadow: 1px 1px 10px #506c84;
+  box-shadow: 0.5px 0.5px 5px #506c84;
 }
 
 button:focus {
@@ -214,14 +214,12 @@ button:hover {
   width: 35%;
 }
 
-/* Media Queries */
 @media (min-width: 1300px) {
   .main-content {
     max-width: 1300px;
     margin: auto;
   }
 }
-
 
 #roomCode {
   margin-top: 20px;
@@ -273,4 +271,11 @@ footer{
   color: #506c84;
   margin-top: 5px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#signature{
+  float: right;
+  margin-right: 5px;
+  color: white;
+  font-size: smaller;
 }
