@@ -48,14 +48,12 @@ function myCharacter() {
   $("#me").html('<img src="' + myPic + '">');
 
   var name = myPic.split('.jpg')[0];
-  name = name.split('/').pop().split('%20').map(function (part) {
-    return part.charAt(0).toUpperCase() + part.slice(1);
-  }).join(' ');
-
+  name = name.split('/').pop().split('%20').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
   $("#name").html('You are ' + name);
 }
 
 function displayRandomPhotos() {
+  $('#gameboard').html('');
   var allPicsCopy = allPics.slice();
 
   for (var i = allPicsCopy.length - 1; i > 0; i--) {
@@ -65,7 +63,7 @@ function displayRandomPhotos() {
     allPicsCopy[j] = temp;
   }
 
-  selectedPics = allPicsCopy.slice(0, 24);
+  selectedPics = allPicsCopy.slice(0, 15);
 
   for (var i = 0; i < selectedPics.length; i++) {
     var cardContainer = $('<div class="card-container">');
@@ -83,6 +81,7 @@ function displayRandomPhotos() {
 }
 
 function setupGame() {
+  console.log("Setup game called");
   displayRandomPhotos();
   myCharacter();
 
@@ -111,22 +110,38 @@ function setupGame() {
     reset();
   });
 
-  function reset() {
-    var play = confirm('Do you want to play again?');
-    if (play == true) {
-      $('#gameboard').html('');
-      selectedPics = [];
-      displayRandomPhotos();
-      myCharacter();
-    } else {
-      alert('Thanks for playing!');
-    }
-  }
+
+}
+
+function reset() {
+  // Show the custom popup
+  $('#customPopup').css('display', 'flex');
+
+  $('#yesButton').click(function () {
+    $('#customPopup').css('display', 'none');
+    $('#gameboard').html('');
+    selectedPics = [];
+    displayRandomPhotos();
+    myCharacter();
+  });
+
+  $('#noButton').click(function () {
+    $('#customPopup').css('display', 'none');
+    alert('Thanks for playing!');
+  });
+
+  $('#cancelButton').click(function () {
+    $('#customPopup').css('display', 'none');
+  });
 }
 
 $(window).on('load', function () {
   setTimeout(function () {
     $('.loader').fadeOut();
+    if (typeof setupGameCalled === 'undefined') {
+      setupGameCalled = true;
+      setupGame();
+    }
   }, 4000);
 
   setupGame();
