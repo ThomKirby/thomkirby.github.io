@@ -57,8 +57,8 @@ function myCharacter() {
 }
 
 function displayRandomPhotos() {
-  //$('#gameboard').html('');
-  console.log(allPics);
+  $('#gameboard').html('');
+  console.log("displayRandomPhotos");
   var allPicsCopy = allPics.slice();
 
   for (var i = allPicsCopy.length - 1; i > 0; i--) {
