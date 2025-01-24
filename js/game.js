@@ -23,13 +23,11 @@ $.ajax({
         allPics.push(val);
       }
     });
-    setupGame();
+    setupGame(); // Call setupGame after allPics is populated
   }
 });
 
 var selectedPics = [];
-var opponentCharacterIndex = Math.floor(rng() * selectedPics.length);
-var opponentCharacter = selectedPics[opponentCharacterIndex];
 
 function myCharacter() {
   const playerSeed = generateRandomSeed();
@@ -42,14 +40,20 @@ function myCharacter() {
     remainingPics.splice(opponentCharacterIndex, 1);
   }
 
-  var myPicIndex = Math.floor(playerRng() * remainingPics.length);
-  var myPic = remainingPics[myPicIndex];
+  if (remainingPics.length > 0) {
+    var myPicIndex = Math.floor(playerRng() * remainingPics.length);
+    var myPic = remainingPics[myPicIndex];
 
-  $("#me").html('<img src="' + myPic + '">');
+    console.log(myPic);  // Logging myPic to console
 
-  var name = myPic.split('.jpg')[0];
-  name = name.split('/').pop().split('%20').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
-  $("#name").html('You are ' + name);
+    $("#me").html('<img src="' + myPic + '">');
+
+    var name = myPic.split('.jpg')[0];
+    name = name.split('/').pop().split('%20').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
+    $("#name").html('You are ' + name);
+  } else {
+    console.error("No remaining pictures available for myCharacter");
+  }
 }
 
 function displayRandomPhotos() {
@@ -65,18 +69,26 @@ function displayRandomPhotos() {
 
   selectedPics = allPicsCopy.slice(0, 15);
 
-  for (var i = 0; i < selectedPics.length; i++) {
-    var cardContainer = $('<div class="card-container">');
-    cardContainer.append('<div class="card"><img src="' + selectedPics[i] + '"></div>');
+  if (selectedPics.length > 0) {
+    var opponentCharacterIndex = Math.floor(rng() * selectedPics.length);
+    opponentCharacter = selectedPics[opponentCharacterIndex];
+    console.log(opponentCharacter);  // Logging opponentCharacter to console
 
-    var name = selectedPics[i].split('.jpg')[0];
-    name = name.split('/').pop().split('%20').map(function (part) {
-      return part.charAt(0).toUpperCase() + part.slice(1);
-    }).join(' ');
+    for (var i = 0; i < selectedPics.length; i++) {
+      var cardContainer = $('<div class="card-container">');
+      cardContainer.append('<div class="card"><img src="' + selectedPics[i] + '"></div>');
 
-    cardContainer.append('<div class="card-name">' + name + '</div>');
+      var name = selectedPics[i].split('.jpg')[0];
+      name = name.split('/').pop().split('%20').map(function (part) {
+        return part.charAt(0).toUpperCase() + part.slice(1);
+      }).join(' ');
 
-    $("#gameboard").append(cardContainer);
+      cardContainer.append('<div class="card-name">' + name + '</div>');
+
+      $("#gameboard").append(cardContainer);
+    }
+  } else {
+    console.error("No pictures available in selectedPics");
   }
 }
 
@@ -109,12 +121,9 @@ function setupGame() {
     updateScore(win, loss);
     reset();
   });
-
-
 }
 
 function reset() {
-  // Show the custom popup
   $('#customPopup').css('display', 'flex');
 
   $('#yesButton').click(function () {
