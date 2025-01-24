@@ -23,7 +23,7 @@ $.ajax({
         allPics.push(val);
       }
     });
-    setupGame(); // Call setupGame after allPics is populated
+    setupGame();
   }
 });
 
@@ -44,7 +44,7 @@ function myCharacter() {
     var myPicIndex = Math.floor(playerRng() * remainingPics.length);
     var myPic = remainingPics[myPicIndex];
 
-    console.log(myPic);  // Logging myPic to console
+    console.log(myPic);
 
     $("#me").html('<img src="' + myPic + '">');
 
@@ -73,7 +73,7 @@ function displayRandomPhotos() {
   if (selectedPics.length > 0) {
     var opponentCharacterIndex = Math.floor(rng() * selectedPics.length);
     opponentCharacter = selectedPics[opponentCharacterIndex];
-    console.log(opponentCharacter);  // Logging opponentCharacter to console
+    console.log(opponentCharacter);
 
     for (var i = 0; i < selectedPics.length; i++) {
       var cardContainer = $('<div class="card-container">');
