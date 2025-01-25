@@ -16,11 +16,11 @@ let rng = new Math.seedrandom(seed);
 var allPics = [];
 
 $.ajax({
-  url: 'img/',
+  url: './img/',
   success: function (data) {
     $(data).find('a').attr('href', function (i, val) {
       if (val.match(/\.(jpe?g|png|gif)$/)) {
-        allPics.push(val);
+        allPics.push('/img/'+ val);
       }
     });
     setupGame();
